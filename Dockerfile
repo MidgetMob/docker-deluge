@@ -25,4 +25,4 @@ COPY entrypoint.sh /entrypoint.sh
 # Assign user
 USER deluge
 
-CMD ["/entrypoint.sh"]
+#CMD ["/entrypoint.sh"]
