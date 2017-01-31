@@ -10,4 +10,7 @@ RUN add-apt-repository -y ppa:deluge-team/ppa && \
     deluge-webui \
     deluged
 
+RUN adduser deluge --disabled-login
+USER deluge
+
 CMD ["/entrypoint.sh"]
