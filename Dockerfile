@@ -2,13 +2,13 @@ FROM ubuntu:latest
 MAINTAINER Jon Schulberger <jschoulzy@gmail.com>
 
 # Pre-req for adding deluge repo
-RUN apt-get update -q && \
-    apt-get install -qy \
+RUN apt-get -q update && \
+    apt-get -qy install \
     software-properties-common
 
 # Add repo, install daemon & webui
 RUN add-apt-repository -y ppa:deluge-team/ppa && \
-    apt-get update -q && \
+    apt-get -q update && \
     apt-get -qy install \
     deluge-webui \
     deluged && \
