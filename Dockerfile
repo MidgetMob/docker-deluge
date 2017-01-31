@@ -1,6 +1,8 @@
 FROM ubuntu:latest
 MAINTAINER Jon Schulberger <jschoulzy@gmail.com>
 
+EXPOSE 8112 58846 58946 58946/udp
+
 # Create user
 RUN adduser deluge --disabled-login
 
@@ -17,7 +19,7 @@ RUN add-apt-repository -y ppa:deluge-team/ppa && \
     deluged && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy the startscript
+# Move the entrypint file over
 COPY entrypoint.sh /entrypoint.sh
 
 # Assign user
