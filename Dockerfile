@@ -1,6 +1,9 @@
 FROM ubuntu:latest
 MAINTAINER Jon Schulberger <jschoulzy@gmail.com>
 
+# Create user
+RUN adduser deluge --disabled-login
+
 # Pre-req for adding deluge repo
 RUN apt-get -q update && \
     apt-get -qy install \
@@ -14,8 +17,7 @@ RUN add-apt-repository -y ppa:deluge-team/ppa && \
     deluged && \
     rm -rf /var/lib/apt/lists/*
 
-# Create & assign user
-RUN adduser deluge --disabled-login
+# Assign user
 USER deluge
 
 CMD ["/entrypoint.sh"]
