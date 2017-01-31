@@ -17,6 +17,9 @@ RUN add-apt-repository -y ppa:deluge-team/ppa && \
     deluged && \
     rm -rf /var/lib/apt/lists/*
 
+# Copy the startscript
+COPY entrypoint.sh /entrypoint.sh
+
 # Assign user
 USER deluge
 
