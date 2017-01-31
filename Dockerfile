@@ -8,7 +8,8 @@ RUN apt-get update && \
 RUN add-apt-repository -y ppa:deluge-team/ppa && \
     apt-get -y install \
     deluge-webui \
-    deluged
+    deluged && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN adduser deluge --disabled-login
 USER deluge
