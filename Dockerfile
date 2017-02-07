@@ -22,6 +22,8 @@ RUN add-apt-repository -y ppa:deluge-team/ppa && \
 # Move the entrypint file over
 COPY entrypoint.sh /entrypoint.sh
 
+VOLUME /home/deluge
+
 # Assign user
 USER deluge
 
